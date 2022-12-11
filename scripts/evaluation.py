@@ -33,8 +33,10 @@ if __name__ == "__main__":
         return tf.strings.regex_replace(stripped_html,
                                       '[%s]' % re.escape(string.punctuation),
                                       '')        
-    # Load the model from the 
+    # Load the model from the version 1, an inference model
     model = tf.keras.models.load_model('./model/1')
+    
+    # Load the model from version 0, without vectorize layer
     #base_model = tf.keras.models.load_model('./model/0')
     #loaded_vectorize_layer_model = tf.keras.models.load_model('./model/2')
     #loaded_vectorize_layer = loaded_vectorize_layer_model.layers[0]    
