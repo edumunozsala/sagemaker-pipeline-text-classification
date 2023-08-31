@@ -1,20 +1,17 @@
 # And end-to-end AWS Sagemaker Pipeline to prepare data, train, evaluate and conditional deployment of a Keras Text Classification model
 
-This repository contains the Jupyter notebooks and Python scripts to build a SageMaker Pipeline that includes the folluwing stages:
+This repository contains the Jupyter notebooks and Python scripts to build a SageMaker Pipeline that includes the following stages:
 - Data download and preprocessing
 - Train a Keras model for text classification
 - Evaluate the model on the validation dataset to get the accuracy
 - A condition step to check if the accuracy is acceptable
 - Register and create the model in Sagemaker
-- Create a Lambda function to deploy the model to and endpoint for future prediction
-- if accuracy is worse, then a failed step to notify the result
+- Create a Lambda function to deploy the model to an endpoint for future prediction
+- If accuracy is worse, then a failed step to notify the result
 
-We are not interested in the model architecture, we are not searching the "best model" what we want to show here is how to build a Sagemaker pipeline to automate this complex process. MLOps is one of the challenges in the machine learning community, this is a simple example on how can you achieve automation in an ML project.
+We are not interested in the model architecture, we are not searching for the "best model" what we want to show here is how to build a Sagemaker pipeline to automate this complex process. MLOps is one of the challenges in the machine learning community, this is a simple example of how can you achieve automation in an ML project.
 
 Most of the inspiration and code examples can be downloaded from the sagemaker examples repository, more specifically from the notebook [SageMaker Pipelines California Housing - Taking different steps based on model performance](https://github.com/aws/amazon-sagemaker-examples/blob/main/sagemaker-pipelines/tabular/tensorflow2-california-housing-sagemaker-pipelines-deploy-endpoint/tensorflow2-california-housing-sagemaker-pipelines-deploy-endpoint.ipynb).
-
-
-** This repository is still In progress**
 
 ## The dataset
 
@@ -24,8 +21,8 @@ This is a dataset for binary sentiment classification containing substantially m
 
 
 ## Problem description
-** In progress**
-Our goal is define, build and run a machine learning pipeline, end-to-end, that we can run periodically to prepare the data, upload it to AWS S3, build and train a keras model, evaluate the model on the validation dataset and finally if the performance or accuracy of the model is greater than a defined threshold deploy the model in an endpoint for future predictions.
+
+Our goal is to define, build, and run a machine learning pipeline, end-to-end, that we can run periodically to prepare the data, upload it to AWS S3, build, and train a keras model, evaluate the model on the validation dataset and finally if the performance or accuracy of the model is greater than a defined threshold deploy the model in an endpoint for future predictions.
 
 **Note:** In this simple example the training and validation dataset is not going to be modify so probably no retraining is needed. But you can adjust this example to your own problem and dataset that requires retraining.
 
@@ -36,7 +33,6 @@ The code for model building and training has been extracted from a Keras tutoria
 We use this simple model to drastically reduce the training time and compute power required, for the sake of saving money and time.
 
 ## Content
-** Still In progress**
 
 - text-classification-keras-local notebook: Here we download, prepare, build and train the model locally withour using sagemaker capabilities.
 - sm-pipeline-text-classification-keras-batch: the pipeline prepare, train, evluate and run a Batch Transform job
